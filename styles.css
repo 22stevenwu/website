@@ -15,16 +15,14 @@ body {
     background: #f5f5f5;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 0 2em;
-
+    align-items: flex-start; 
+    justify-content: center; 
+    margin-top: -30px;
 }
 
 .hello {
     font-size: 40px;
-    color: darkslategray;
+    color: #294C60;
     margin-bottom: 0.5em;
     margin-left: 150px;
 }
@@ -43,10 +41,229 @@ body {
     margin-left: 150px;
 }
 
+.home-animate {
+    opacity: 0; /* Initially invisible */
+    transform: translateY(20px); /* Start slightly below */
+    transition: opacity 1s, transform 1s; /* Smooth transition */
+}
+
+/* Define the animation when the element becomes visible */
+.home-animate.visible {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to the original position */
+}
+
 /* About Section */
 #about {
-    background: #e8eaf6;
+    display:flex;
+    flex-direction: column;
+    padding: 4em 2em;
+    text-align: flex-start;
+    color: #294C60;
 }
+
+.about-title {
+    font-size: 2.5em;
+    text-align: center; 
+    margin: 20px;
+}
+
+.about-container {
+    display: flex;
+    gap: 2em; 
+    align-items: center;
+    justify-content: flex-start; 
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.bio {
+    width: 600px;
+    height: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #294C60;
+    margin: 20px;
+}
+
+.bio .major{
+    font-style:italic;
+    font-weight: bold;
+    color: #C37B6D;
+}
+
+.headshot {
+    width: 250px; 
+    height: 250px; 
+    border-radius: 8px;
+    object-fit: cover; 
+    background-color: #e0e0e0; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.spotify-widget-wrapper {
+    width: 100%; /* Make the width responsive */
+    max-width: 800px; /* Max width */
+    max-height: 150px; /* Fixed height to make it more rectangular */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    opacity: 1;  /* Initially fully visible */
+    transition: opacity 1s ease-out; /* Smooth fade transition */
+}
+
+/* Fade out effect for the wrapper */
+.fade-out-wrapper {
+    opacity: 0; /* Make the wrapper (and the iframe inside it) invisible during song change */
+}
+
+/* Fade-in effect for the wrapper */
+.fade-in-wrapper {
+    opacity: 1; /* Fully visible after new song is loaded */
+}
+
+
+/* Portfolio Section */
+#experience {
+    padding: 4em 2em;
+    background: #f9f9f9;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 50px;
+    opacity: 0; /* Start with invisible */
+    transform: translateY(30px); /* Slightly shift it down */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+#experience.visible {
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Move back to original position */
+}
+
+/* Section Title */
+.section-title {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 2em;
+    color: #294C60;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 3px;
+    background-color: #C37B6D; /* Subtle red-orange color */
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Timeline Container */
+.timeline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    max-height: 500px;  /* Set max height to enable scroll */
+    overflow-y: auto;   /* Enable vertical scrolling */
+    padding-right: 15px; /* Avoid overflow */
+}
+
+/* Timeline Item */
+.timeline-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3em;
+    position: relative;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    opacity: 0; /* Start with invisible */
+    transform: translateY(20px); /* Slightly shift down */
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.timeline-item.visible {
+    opacity: 1; /* Fade in each item */
+    transform: translateY(0); /* Move back to original position */
+}
+
+/* Timeline Content (Job Info) */
+.timeline-content {
+    background: #fff;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+}
+
+.job-date {
+    font-size: 1.1em;
+    color: #C37B6D; /* Subtle red-orange color */
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+.job-title {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #294C60;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.company-name a {
+    font-size: 1.2em;
+    color: #C37B6D;
+    text-decoration: none;
+    margin-bottom: 40px;
+}
+
+.company-name a:hover {
+    color: #294C60; /* On hover, change the link color */
+}
+
+.tech-stack{
+    margin-top: 15px;
+}
+
+.tech-stack span {
+    background: #C37B6D;
+    color: #fff;
+    padding: 0.3em 0.6em;
+    border-radius: 4px;
+    margin-right: 8px;
+    font-size: 0.9em;
+}
+
+/* Job Description */
+.description {
+    font-size: 1em;
+    color: #555;
+    margin-top: 15px;
+}
+
+/* Timeline Marker (Central Line) */
+.timeline-marker {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background-color: #C37B6D;
+    transform: translateX(-50%);
+}
+
 
 /* NavBar Header */
 header {

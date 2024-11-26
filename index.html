@@ -13,11 +13,11 @@
     <!-- Navbar -->
     <header>
         <div class="header-left">
-            <em><a href="#home">Home</a></em>
+            <em><a href="#home">Steven Wu</a></em>
         </div>
         <ul class="header-right">
             <em><li><a href="#about">About</a></li></em>
-            <em><li><a href="#portfolio">Portfolio</a></li></em>
+            <em><li><a href="#experience">Experience</a></li></em>
             <em><li><a href="#contact">Contact</a></li></em>
             <em><li><a href="https://drive.google.com/file/d/1EIflBpcbYpaxJvZaMuI9eGIdKNoIRIdE/view?usp=sharing" target="_blank">Resume</a></li></em>
         </ul>
@@ -25,26 +25,78 @@
 
     <!-- Home Section -->
     <section id="home" class="section">
-        <p class = "hello">Hi, my name is</p>
-        <h1 class = "home-name">Steven Wu </h1>
-        <p class = "home-bio">Junior at Boston College studying Computer Science, Finance, and Data Science<p>
+        <p class="hello home-animate">Hi, my name is</p>
+        <h1 class="home-name home-animate">Steven Wu</h1>
+        <p class="home-bio home-animate">Junior at Boston College studying Computer Science, Finance, and Data Science</p>
     </section>
 
     <!-- About Section -->
     <section id="about" class="section">
-        <h2 class = "about-title">About Me</h2>
-        <p class = "about-bio">
-            Hello! My name is Steven Wu, a current junior at Boston College majoring in <span class = "major"> Computer Science
-             and minoring in Finance and Data Science. </span> I
-        </p>
+        <div class="about-title">
+            <h2 id="about-me-heading"></h2>
+        </div>
+        <div class="about-container">
+            <div class="bio">
+                <p>Hello! I’m Steven Wu, a junior at Boston College pursuing a major in <span class="major">Computer Science with minors in Finance and Data Science. </span> 
+                    Originally from the New York Metropolitan Area, I’m passionate about contributing to innovative solutions and eager to learn from 
+                    industry professionals. I've always been intrigued by the intersection between business and technology, and I'm driven to harness
+                    data and technology to solve real-world problems.
+                    <br><br>
+                    Outside of academics, I’m an avid basketball fan, enjoy spending time on the golf course, and have a knack for solving puzzles. 
+                    I also enjoy listening to music of all kinds! Check out what I am currently listening to below:
+                </p>
+            </div>
+            <img src="images/headshot.jpg" alt="Headshot" class="headshot">
+        </div>
+    
+        <!-- Add the id="spotify-iframe" here -->
+        <div class="spotify-widget-wrapper">
+            <iframe id="spotify-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/3PKq1cb1lIhs8moUhfADKJ?utm_source=generator" width="100%" height="200" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+    
+        <button id="next-song-button">Next Song</button>
     </section>
 
-    <!-- Projects Section -->
-    <section id="portfolio" class="section">
-        <h2>Projects</h2>
-        <div class="project">
-            <h3>Sustainability App</h3>
-            <p>An app to gamify Boston College's sustainability initiatives.</p>
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <h2 class="section-title">Experience</h2>
+        <div class="timeline">
+            <!-- Experience Item 1 -->
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <p class="job-date">August 2023 - Present</p>
+                    <h3 class="job-title">Technology Consultant</h3>
+                    <p class="company-name"><a href="https://www.bc.edu/bc-web/offices/its/about/student-staff.html#tab-technology_consultants_various_locations_" target="_blank">@Boston College EagleTech</a></p>
+                    <p class="tech-stack">
+                        <span>Customer Support</span> <span>Problem Solving</span> <span>Hardware Setup</span>
+                    </p>
+                    <p class="description">
+                        Provide hardware and software support to over 100 BC faculty members, troubleshooting system configuration and network issues. 
+                        Maintain a database of 1000+ service tickets to identify and address abnormalities and security concerns. Assemble and configure hardware, 
+                        including monitors, laptops, and accessories, tailored to user-specific needs.
+                    </p>
+                </div>
+            </div>
+    
+            <!-- Experience Item 2 -->
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <p class="job-date">July 2024 - August 2024</p>
+                    <h3 class="job-title">Quality Assurance Support Intern</h3>
+                    <p class="company-name"><a href="https://www.ricoh-usa.com/en" target="_blank">@Ricoh USA Inc.</a></p>
+                    <p class="tech-stack">
+                        <span>Python</span> <span>JavaScript</span> <span>Leapwork</span> <span>Apache JMeter</span>
+                    </p>
+                    <p class="description">
+                        Worked on the Delivery Control service within Ricoh's Intelligent Business Platform — utilized Apache JMeter and Postman to perform load and 
+                        stress testing on RESTful APIs, ensuring system reliability. Automated regression testing with Leapwork, increasing testing efficiency. Implemented 
+                        GET endpoints using Python and JavaScript to optimize development workflows and curated detailed software design documentation to guide system 
+                        architecture and components, supporting both development and QA teams.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
