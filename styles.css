@@ -24,7 +24,6 @@ header {
     z-index: 1000;
 }
 
-/* Left-aligned 'Home' link */
 .header-left {
     flex: 1;
 }
@@ -40,7 +39,6 @@ header {
     color: #FFEFD3;
 }
 
-/* Right-aligned navigation links */
 .header-right {
     display: flex;
     list-style: none;
@@ -103,15 +101,14 @@ header {
 }
 
 .home-animate {
-    opacity: 0; /* Initially invisible */
-    transform: translateY(20px); /* Start slightly below */
-    transition: opacity 1s, transform 1s; /* Smooth transition */
+    opacity: 0;
+    transform: translateY(20px); 
+    transition: opacity 1s, transform 1s; 
 }
 
-/* Define the animation when the element becomes visible */
 .home-animate.visible {
-    opacity: 1; /* Fully visible */
-    transform: translateY(0); /* Move to the original position */
+    opacity: 1; 
+    transform: translateY(0); 
 }
 
 /* About Section */
@@ -299,7 +296,7 @@ header {
 
 .job-date {
     font-size: 1.1em;
-    color: #C37B6D; /* Subtle red-orange color */
+    color: #C37B6D; 
     font-weight: bold;
     margin-bottom: 1em;
 }
@@ -320,7 +317,7 @@ header {
 }
 
 .company-name a:hover {
-    color: #294C60; /* On hover, change the link color */
+    color: #294C60; 
 }
 
 .tech-stack{
@@ -359,6 +356,9 @@ header {
     background-color: #f9f9f9; 
     display: flex;
     flex-direction: column;
+    opacity: 0; 
+    transform: translateY(20px); 
+    transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 #contact h1 {
@@ -392,6 +392,7 @@ header {
     display: inline-block; 
 }
 
+/* Footer */
 .footer {
     background-color: #333; 
     color: #fff; 

@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }, {
-        threshold: 0.2 // Trigger when 20% of the element is in the viewport
+        threshold: 0.2 
     });
 
     const experienceSection = document.getElementById('experience');
@@ -121,4 +121,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById("next-song-button").addEventListener("click", () => changeSong(true));
     document.getElementById("prev-song-button").addEventListener("click", () => changeSong(false));
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const contactSection = document.querySelector("#contact");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    contactSection.style.opacity = "1";
+                    contactSection.style.transform = "translateY(0)";
+                }
+            });
+        },
+        { threshold: 0.5 } 
+    );
+
+    observer.observe(contactSection);
 });
