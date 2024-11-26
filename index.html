@@ -48,13 +48,23 @@
             </div>
             <img src="images/headshot.jpg" alt="Headshot" class="headshot">
         </div>
-    
-        <!-- Add the id="spotify-iframe" here -->
+
         <div class="spotify-widget-wrapper">
-            <iframe id="spotify-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/3PKq1cb1lIhs8moUhfADKJ?utm_source=generator" width="100%" height="200" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            <iframe id="spotify-iframe" style="border-radius:12px" width="100%" height="200" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
     
-        <button id="next-song-button">Next Song</button>
+        <div class="buttons-container">
+            <!-- Previous Song Button -->
+            <div id="prev-song-button" class="image-button">
+                <img src="images/rewind.png" alt="Previous Song" />
+            </div>
+        
+            <!-- Next Song Button -->
+            <div id="next-song-button" class="image-button">
+                <img src="images/skip.png" alt="Next Song" />
+            </div>
+        </div>
+
     </section>
 
     <!-- Experience Section -->
@@ -90,7 +100,7 @@
                         <span>Python</span> <span>JavaScript</span> <span>Leapwork</span> <span>Apache JMeter</span>
                     </p>
                     <p class="description">
-                        Worked on the Delivery Control service within Ricoh's Intelligent Business Platform — utilized Apache JMeter and Postman to perform load and 
+                        Worked on the Delivery Control service within Ricoh's Intelligent Business Platform. Utilized Apache JMeter and Postman to perform load and 
                         stress testing on RESTful APIs, ensuring system reliability. Automated regression testing with Leapwork, increasing testing efficiency. Implemented 
                         GET endpoints using Python and JavaScript to optimize development workflows and curated detailed software design documentation to guide system 
                         architecture and components, supporting both development and QA teams.

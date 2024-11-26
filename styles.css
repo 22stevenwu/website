@@ -103,30 +103,60 @@ body {
     background-color: #e0e0e0; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
 .spotify-widget-wrapper {
-    width: 100%; /* Make the width responsive */
-    max-width: 800px; /* Max width */
-    max-height: 150px; /* Fixed height to make it more rectangular */
+    width: 100%;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
-    padding: 10px;
     border-radius: 12px;
     display: flex;
     justify-content: center;
-    opacity: 1;  /* Initially fully visible */
-    transition: opacity 1s ease-out; /* Smooth fade transition */
+    opacity: 1;
+    transition: opacity 0.5s ease-out; 
 }
 
-/* Fade out effect for the wrapper */
 .fade-out-wrapper {
-    opacity: 0; /* Make the wrapper (and the iframe inside it) invisible during song change */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease-out;
 }
 
-/* Fade-in effect for the wrapper */
 .fade-in-wrapper {
-    opacity: 1; /* Fully visible after new song is loaded */
+    opacity: 1;
+    pointer-events: auto; 
+    transition: opacity 0.5s ease-in;
 }
 
+#prev-song-button, #next-song-button {
+    display: inline-block; 
+    cursor: pointer; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+#prev-song-button img, #next-song-button img {
+    width: 40px;  
+    height: auto; 
+    transition: transform 0.3s ease; 
+}
+
+#prev-song-button {
+    margin-right: 50px; 
+}
+
+#prev-song-button:hover, #next-song-button:hover {
+    transform: scale(1.2); 
+}
+
+#prev-song-button:active, #next-song-button:active {
+    transform: scale(1);
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center; 
+    margin-top: 20px; 
+}
 
 /* Portfolio Section */
 #experience {

@@ -68,8 +68,8 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-/* Fade animation for switching songs */
-document.addEventListener("DOMContentLoaded", function() {
+/* Cycling songs and fade animation */
+document.addEventListener("DOMContentLoaded", function () {
     const songIds = [
         "3PKq1cb1lIhs8moUhfADKJ", // Rush - Brook and the Bluff
         "2aSC2xhRxOLiiZZVjhbylH", // Hold On, We're Going Home - Drake
@@ -83,32 +83,42 @@ document.addEventListener("DOMContentLoaded", function() {
         "5LrN7yUQAzvthd4QujgPFr", // Here With Me - d4vd
     ];
 
-    let currentSongIndex = 1;  // Start at the first song
+    let currentSongIndex = Math.floor(Math.random() * songIds.length);
 
-    // Function to change the song by updating the iframe URL
-    function changeSong() {
-        const iframeWrapper = document.querySelector(".spotify-widget-wrapper");
+    const iframe = document.getElementById("spotify-iframe");
 
-        // Step 1: Fade out the wrapper (iframe will fade out as part of the wrapper)
-        iframeWrapper.classList.add("fade-out-wrapper");
-
-        // Wait for the fade-out effect to complete (1s)
-        setTimeout(() => {
-            // Step 2: Change the song by updating the iframe src
-            const currentSongId = songIds[currentSongIndex];
-            const iframe = document.getElementById("spotify-iframe");
-            iframe.src = `https://open.spotify.com/embed/track/${currentSongId}?utm_source=generator`;
-
-            // Increment the song index, looping back to the start if needed
-            currentSongIndex = (currentSongIndex + 1) % songIds.length; // Loop back to the first song after the 10th
-
-            // Step 3: Fade in the new song
-            iframeWrapper.classList.remove("fade-out-wrapper");
-            iframeWrapper.classList.add("fade-in-wrapper"); // Ensure it fades in
-
-        }, 1000); // Wait for the fade-out transition to complete before changing the song
+    function setIframeSource(src) {
+        iframe.src = src;
     }
 
-    // Add event listener to the "Next Song" button
-    document.getElementById('next-song-button').addEventListener('click', changeSong);
+    function changeSong(next = true) {
+        const iframeWrapper = document.querySelector(".spotify-widget-wrapper");
+        iframeWrapper.classList.add("fade-out-wrapper");
+
+        setTimeout(() => {
+            if (next) {
+                currentSongIndex = (currentSongIndex + 1) % songIds.length;
+            } else {
+                currentSongIndex = (currentSongIndex - 1 + songIds.length) % songIds.length;
+            }
+
+            const newSrc = `https://open.spotify.com/embed/track/${songIds[currentSongIndex]}?utm_source=generator`;
+            setIframeSource(newSrc);
+
+            setTimeout(() => {
+                iframeWrapper.classList.remove("fade-out-wrapper");
+                iframeWrapper.classList.add("fade-in-wrapper");
+
+                setTimeout(() => {
+                    iframeWrapper.classList.remove("fade-in-wrapper");
+                }, 500); 
+            }, 100); 
+        }, 500); 
+    }
+
+    const initialSongSrc = `https://open.spotify.com/embed/track/${songIds[currentSongIndex]}?utm_source=generator`;
+    setIframeSource(initialSongSrc);
+
+    document.getElementById("next-song-button").addEventListener("click", () => changeSong(true));
+    document.getElementById("prev-song-button").addEventListener("click", () => changeSong(false));
 });
