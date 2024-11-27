@@ -123,6 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("prev-song-button").addEventListener("click", () => changeSong(false));
 });
 
+/* Fade animation for Contacts section */
 document.addEventListener("DOMContentLoaded", function () {
     const contactSection = document.querySelector("#contact");
 
@@ -139,4 +140,28 @@ document.addEventListener("DOMContentLoaded", function () {
     );
 
     observer.observe(contactSection);
+});
+
+/* hamburger menu toggle */
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const headerRight = document.querySelector(".header-right");
+
+    menuToggle.addEventListener("click", function () {
+        headerRight.classList.toggle("open"); 
+    });
+});
+
+/* animation for hamburger menu */
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const headerRight = document.querySelector(".header-right");
+
+    menuToggle.addEventListener("click", function () {
+        if (headerRight.style.maxHeight) {
+            headerRight.style.maxHeight = null;
+        } else {
+            headerRight.style.maxHeight = headerRight.scrollHeight + "px";
+        }
+    });
 });
